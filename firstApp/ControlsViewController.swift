@@ -21,6 +21,7 @@ class ControlsViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var emailTextField: UITextField!
     var picker = UIImagePickerController()
 
+    var initialFrame, finalFrame : CGRect?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,14 @@ class ControlsViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.delegate = self
 
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        initialFrame = self.view.frame
+        finalFrame = self.view.frame
+        //finalFrame!.origin.y -= 300
+    }
     
     @IBAction func changeText(_ sender: Any) {
         myLabel.text = textField.text;
@@ -101,5 +109,21 @@ class ControlsViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.resignFirstResponder()
         //view.endEditing(true)
         return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.3){ [self] in
+            
+            finalFrame!.origin.y -= CGFloat(textField.tag)
+            self.view.frame = self.finalFrame!
+            
+        }
+        
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.3){ [self] in
+            finalFrame!.origin.y += CGFloat(textField.tag)
+            self.view.frame = self.initialFrame!
+        }
+        
     }
 }

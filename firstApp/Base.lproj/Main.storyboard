@@ -130,10 +130,6 @@
                                     <action selector="getPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tBr-lW-28b"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7GB-zL-pYA">
-                                <rect key="frame" x="18" y="594" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSK-AS-V1h">
                                 <rect key="frame" x="20" y="516" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,12 +137,20 @@
                                     <action selector="agree:" destination="BYZ-38-t0r" eventType="valueChanged" id="HgO-OE-5xa"/>
                                 </connections>
                             </switch>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tbb-e4-ElX">
+                                <rect key="frame" x="20" y="828" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="clickMeButton" destination="W3p-92-FlP" id="NIY-D1-RyL"/>
+                        <outlet property="emailTextField" destination="Tbb-e4-ElX" id="x2S-Um-Pj2"/>
+                        <outlet property="galleryImageView" destination="C6w-Bx-5mQ" id="CrK-tB-M37"/>
                         <outlet property="myImage" destination="C6w-Bx-5mQ" id="J6V-fH-L4l"/>
                         <outlet property="myLabel" destination="eW6-Vw-UHT" id="IJb-dZ-sdM"/>
                         <outlet property="percentLabel" destination="dwC-wp-MgJ" id="HZV-xb-b5u"/>

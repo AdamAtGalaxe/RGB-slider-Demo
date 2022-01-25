@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ControlsViewController: UIViewController {
+class ControlsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
@@ -16,12 +16,17 @@ class ControlsViewController: UIViewController {
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var terms: UISwitch!
     @IBOutlet weak var clickMeButton: UIButton!
+    @IBOutlet weak var galleryImageView: UIImageView!
     
-    var imagePicker : UIImagePickerController!
+    @IBOutlet weak var emailTextField: UITextField!
+    var picker = UIImagePickerController()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        textField.delegate = self
 
     }
     
@@ -74,42 +79,27 @@ class ControlsViewController: UIViewController {
         }
     }
     @IBAction func getPicture(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .camera
+        }
+        else if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            picker.sourceType = .photoLibrary
+        }
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        galleryImageView.image = info[.originalImage] as? UIImage
+        picker.dismiss(animated: true, completion: nil)
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    @IBAction func redSlider(_ sender: UISlider) {
-        red = sender.value
-        self.view.backgroundColor = UIColor.init(_colorLiteralRed: red, green: green, blue: blue, alpha: 1.0)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func greenSlider(_ sender: UISlider) {
-        green = sender.value
-        self.view.backgroundColor = UIColor.init(_colorLiteralRed: red, green: green, blue: blue, alpha: 1.0)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        //view.endEditing(true)
+        return true
     }
-    
-    @IBAction func blueSlider(_ sender: UISlider) {
-        blue = sender.value
-        self.view.backgroundColor = UIColor.init(_colorLiteralRed: red, green: green, blue: blue, alpha: 1.0)
-    }
-    */
-    
-
-    /*
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class ControlsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var colorSegments: UISegmentedControl!
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -126,4 +127,23 @@ class ControlsViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
     }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //view.endEditing(true)
+        for view in self.view.subviews{
+            if view.isKind(of: UITextField.self){
+                view.resignFirstResponder()
+            }
+        }
+    }
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if(motion == .motionShake){
+            colorSliders[0].value = 1.0
+            colorSliders[1].value = 0.0
+            colorSliders[2].value = 0.0
+            colorSliders[3].value = 1.0
+            colorSegments.selectedSegmentIndex = 0
+            self.view.backgroundColor = UIColor.red
+        }
+    }
+
 }

@@ -17,6 +17,7 @@
 		6608D0C02799C92600C2B132 /* firstAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608D0BF2799C92600C2B132 /* firstAppUITestsLaunchTests.swift */; };
 		6608D0CD279B013000C2B132 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608D0CC279B013000C2B132 /* ControlsViewController.swift */; };
 		66B0D42527A18CE600155492 /* ResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B0D42427A18CE600155492 /* ResponderViewController.swift */; };
+		66B0D42727A1A2C900155492 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B0D42627A1A2C900155492 /* SimpleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6608D0BF2799C92600C2B132 /* firstAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6608D0CC279B013000C2B132 /* ControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
 		66B0D42427A18CE600155492 /* ResponderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderViewController.swift; sourceTree = "<group>"; };
+		66B0D42627A1A2C900155492 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				6608D0AA2799C92600C2B132 /* Info.plist */,
 				6608D0CC279B013000C2B132 /* ControlsViewController.swift */,
 				66B0D42427A18CE600155492 /* ResponderViewController.swift */,
+				66B0D42627A1A2C900155492 /* SimpleTableViewController.swift */,
 			);
 			path = firstApp;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				6608D09D2799C92500C2B132 /* AppDelegate.swift in Sources */,
 				66B0D42527A18CE600155492 /* ResponderViewController.swift in Sources */,
+				66B0D42727A1A2C900155492 /* SimpleTableViewController.swift in Sources */,
 				6608D09F2799C92500C2B132 /* SceneDelegate.swift in Sources */,
 				6608D0CD279B013000C2B132 /* ControlsViewController.swift in Sources */,
 			);

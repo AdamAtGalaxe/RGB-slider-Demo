@@ -34,10 +34,18 @@ class SimpleTableViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var alert = UIAlertController(title: "Welcome", message: "You selected \(cars[indexPath.row]).", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alert.addAction(cancelAction)
+        alert.addAction(OKAction)
+        present(alert, animated: true, completion: nil)
         //DON'T DO THIS!
 //        let cell = tableView.cellForRow(at: indexPath)
 //        print(cell?.textLabel?.text as Any)
-        print(cars[indexPath.row])
+        //print(cars[indexPath.row])
     }
+    
 
 }

@@ -14,7 +14,18 @@ class ResponderViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        let relogin = UIAlertController(title: "Login", message: "You have timed out. Pleasr enter your pin", preferredStyle: .alert)
+        relogin.addTextField { (textField) in
+            textField.keyboardType = .numberPad
+            textField.isSecureTextEntry = true
+        }
+        let loginAction = UIAlertAction(title: "Login", style: .default){
+            (action) in
+        }
+        relogin.addAction(loginAction)
+        self.present(relogin, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

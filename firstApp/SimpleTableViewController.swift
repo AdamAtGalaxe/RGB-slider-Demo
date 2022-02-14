@@ -13,7 +13,7 @@ class SimpleTableViewController: UIViewController, UITableViewDataSource, UITabl
 
     @IBOutlet weak var carTableView: UITableView!
     let cars = ["Audi", "BMW", "Camaro", "Dodge", "Ford", "Ferrari", "Lotus", "MG", "Mitsubishi", "Honda", "Toyota", "Volkwagon", "Rolls-Royce", "Land Rover", "Volvo", "Lamborghini", "Mazda", "Kia", "Subaru", "Mercedes", "Jeep", "Alpha Romeo", "Pontiac"]
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +45,15 @@ class SimpleTableViewController: UIViewController, UITableViewDataSource, UITabl
 //        let cell = tableView.cellForRow(at: indexPath)
 //        print(cell?.textLabel?.text as Any)
         //print(cars[indexPath.row])
+    }
+    func showAlert(title: String, message: String, okButton: String = "OK"){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let actionDone = UIAlertAction(title: okButton, style: .default, handler: nil)
+        
+        alert.addAction(actionDone)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 

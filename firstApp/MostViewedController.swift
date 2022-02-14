@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 let imagesURL = ["https://www.planetware.com/photos-large/F/france-paris-louvre.jpg", "https://www.planetware.com/photos-large/F/france-paris-notre-dame.jpg", "https://www.planetware.com/wpimages/2021/02/france-paris-top-attractions-avenue-champs-elysees.jpg", "https://www.planetware.com/photos-large/F/france-paris-luxembourg-gardens.jpg"]
 class Downloader{
     class func downloadImageWithURL(url: String) -> UIImage{

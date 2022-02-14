@@ -462,18 +462,27 @@
         <!--Most Recent-->
         <scene sceneID="lbv-WH-U14">
             <objects>
-                <viewController id="IMP-PA-Z26" sceneMemberID="viewController">
+                <viewController id="IMP-PA-Z26" customClass="DownloadImageViewController" customModule="firstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ozz-av-gQS">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uh8-qH-ca4">
+                                <rect key="frame" x="30" y="72" width="369" height="307"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="A4B-hP-qSq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Most Recent" id="bCo-Na-WHi"/>
+                    <connections>
+                        <outlet property="myImageView" destination="Uh8-qH-ca4" id="QHL-bY-Vmp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F8-dU-8Pi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4779" y="455"/>
+            <point key="canvasLocation" x="4778.9719626168226" y="454.85961123110155"/>
         </scene>
         <!--Most Viewed-->
         <scene sceneID="3ur-8z-gQf">
